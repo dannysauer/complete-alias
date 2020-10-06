@@ -23,6 +23,7 @@ Summary:        automagical shell alias completion
 License:        GPL-3.0-or-later
 URL:            https://github.com/cykerway/complete-alias
 Source:         %{name}.tar.xz
+BuildRequires:  bash-completion
 Requires:       bash-completion
 
 %define completiondir "%{buildroot}/%{_sysconfdir}/bash_completion.d/"
