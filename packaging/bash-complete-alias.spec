@@ -25,7 +25,7 @@ URL:            https://github.com/cykerway/complete-alias
 Source:         %{name}.tar.xz
 Requires:       bash-completion
 
-%define completiondir "%{buildroot}/%{_sysconfdir}/bash_completion.d/"
+%define completiondir "%{_sysconfdir}/bash_completion.d/"
 
 %description
 
@@ -36,8 +36,8 @@ Requires:       bash-completion
 #/bin/true
 
 %install
-mkdir -p %completiondir
-%{__install} -m 0644 complete_alias %completiondir
+mkdir -p %buildroot/%completiondir
+%{__install} -m 0644 complete_alias %buildroot/%completiondir
 mkdir -p "%buildroot/%_docdir/%name"
 %{__install} -m 0644 README.md "%buildroot/%_docdir/%name"
 
