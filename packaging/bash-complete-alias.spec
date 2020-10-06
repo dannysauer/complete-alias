@@ -20,6 +20,7 @@ Name:           bash-complete-alias
 Version:        0.0
 Release:        0
 Summary:        Automagical shell alias completion
+BuildArch:      noarch
 License:        GPL-3.0-or-later
 URL:            https://github.com/cykerway/complete-alias
 Source:         %{name}.tar.xz
