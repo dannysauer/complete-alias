@@ -30,7 +30,7 @@ Requires:       bash-completion
 %description
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}
 
 %build
 #/bin/true
