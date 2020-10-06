@@ -19,30 +19,30 @@
 Name:           bash-complete-alias
 Version:        0.0
 Release:        0
-Summary:        automagical shell alias completion
+Summary:        Automagical shell alias completion
 License:        GPL-3.0-or-later
 URL:            https://github.com/cykerway/complete-alias
 Source:         %{name}.tar.xz
 Requires:       bash-completion
 
-%define completiondir "%{_sysconfdir}/bash_completion.d/"
+%define completiondir /usr/share/bash-completion/completions
 
 %description
+Automatically create Bash completion entries for aliases to commands
+which already have known completions
 
 %prep
 %setup -q -n %{name}
 
 %build
-#/bin/true
+# remove shebang on first line since file will only be sourced
+sed -i '1{ /^#!/d }' complete_alias
 
 %install
 mkdir -p %buildroot/%completiondir
 %{__install} -m 0644 complete_alias %buildroot/%completiondir
 mkdir -p "%buildroot/%_docdir/%name"
 %{__install} -m 0644 README.md "%buildroot/%_docdir/%name"
-
-%post
-%postun
 
 %files
 %license LICENSE.txt
